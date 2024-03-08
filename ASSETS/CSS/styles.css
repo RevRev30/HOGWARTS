@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #A574A6;
+    overflow: hidden; /* Prevent scrolling while the GIF is displayed */
+}
+
+.gif-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/ASSETS/IMAGES/gifgit.gif') center center no-repeat; /* Center the GIF */
+    background-size: cover; /* Cover the entire viewport */
+    z-index: 9999; /* Ensure the overlay is on top of other content */
+}
+
+
+.container {
+    width: 80%;
+    margin: 200px auto 240px auto; /* Adjust margin to push content below and move container a little bit on top */
+    text-align: center;
+}
+.arrow-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 30px; /* Adjust font size as needed */
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align content to the start (left) */
+    margin-left: -100px; /* Adjust margin to move both image and text more to the left */
+}
+
+
+.image {
+    margin-right: 10px; /* Adjust margin to push the image closer to the text */
+}
+.image img {
+    width: 300px; /* Adjust image width to make it larger */
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.text {
+    margin-left: 10px; /* Adjust margin to move the text closer to the image */
+    text-align: center;
+    margin-top: 20px; /* Adjust margin between image and text */
+    font-size: 24px; /* Increase the font size */
+    letter-spacing: 1px; /* Add space between letters */
+}
+
+
+
+.title,
+.subtitle,
+.launch-btn {
+    margin: 0; /* Remove default margins */
+}
+.title {
+    font-family: 'jejumyeongjo', sans-serif; /* Change font family to jejumyeongjo */
+}
+.subtitle {
+    margin-bottom: 40px; /* Add margin between subtitle and launch button */
+}
+
+
+.launch-btn {
+    background-color: #4E374E; /* Set the background color */
+    color: #fff; /* Set the text color */
+    border: 2px solid #4E374E; /* Set border color and width */
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
