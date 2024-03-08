@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('exitButton').addEventListener('click', function() {
+        // Set flag in localStorage
+        localStorage.setItem('exitClicked', true);
+        // Close the window
+        window.location.replace('about:blank');
+    });
+
     document.querySelector('.launch-btn').addEventListener('click', function() {
         // Display GIF overlay
         var gifOverlay = document.createElement('div');
