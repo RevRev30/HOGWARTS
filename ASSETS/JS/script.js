@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // After a delay (simulate loading time), redirect to the next page
         setTimeout(function() {
-            window.location.href = "https://revrev30.github.io/hogwarts/generate.html";
+            window.location.href = "generate.html";
             // Remove the GIF overlay
             document.body.removeChild(gifOverlay);
         }, 3000); // Adjust the delay (in milliseconds) as needed
