@@ -198,7 +198,7 @@ body {
 
 .generated-names::before {
     content: "";
-    background: url('../ASSETS/IMAGES/thunder.gif') repeat; /* Replace 'your-gif-url.gif' with the URL of your GIF */
+    background: url('../IMAGES/thunder.gif') repeat; /* Replace 'your-gif-url.gif' with the URL of your GIF */
     position: absolute;
     top: -10px; /* Adjust as needed */
     left: -10px; /* Adjust as needed */
