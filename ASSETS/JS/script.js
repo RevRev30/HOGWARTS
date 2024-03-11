@@ -7,16 +7,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.querySelector('.launch-btn').addEventListener('click', function() {
-        // Display GIF overlay
-        var gifOverlay = document.createElement('div');
-        gifOverlay.classList.add('gif-overlay');
-        document.body.appendChild(gifOverlay);
+        // Display the GIF overlay
+        var gifOverlay = document.querySelector('.gif-overlay');
+        gifOverlay.style.display = 'block';
 
-        // After a delay (simulate loading time), redirect to the next page
+        // After a delay (simulate loading time), add the slow-fade-out class to the text elements
+        setTimeout(function() {
+            var title = document.querySelector('h1.title');
+            var subtitle = document.querySelector('h1.subtitle');
+            title.classList.add('slow-fade-out');
+            subtitle.classList.add('slow-fade-out');
+        }, 1000); // Adjust the delay (in milliseconds) as needed
+
+        // Set the duration of the GIF (in milliseconds)
+        var gifDuration = 5000; // 5 seconds
+
+        // After the GIF duration, redirect to the next page
         setTimeout(function() {
             window.location.href = "generate.html";
-            // Remove the GIF overlay
-            document.body.removeChild(gifOverlay);
-        }, 3000); // Adjust the delay (in milliseconds) as needed
+        }, gifDuration - 2000); // Adjust the timing slightly before the end
     });
 });
