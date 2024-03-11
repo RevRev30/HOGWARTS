@@ -58,6 +58,16 @@ body {
     padding: 16px;
     border-radius: 10px;
 }
+.option {
+    cursor: pointer;
+    display: block; /* Make the label a block element to occupy the entire line */
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+/* Highlight the selected option */
+.option.selected {
+    font-weight: bold; /* Add visual indication of selection */
+}
 
 
 .container .header {
