@@ -1,9 +1,20 @@
+@font-face {
+    font-family: "MyCustomFont";
+    src: url('../FONTS/AnimalesFantastic-lGly.ttf') format('truetype');
+}
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #A574A6;
+    height: 100vh;
+    margin: 0;
     overflow: hidden; /* Prevent scrolling while the GIF is displayed */
+}
+h1 {
+    position: relative; /* Required for z-index to take effect */
+    z-index: 2000; /* Any value higher than the z-index of .gif-overlay */
 }
 
 .gif-overlay {
@@ -12,17 +23,30 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../IMAGES/gifgit.gif') center center no-repeat; /* Center the GIF */
-    background-size: cover; /* Cover the entire viewport */
-    z-index: 9999; /* Ensure the overlay is on top of other content */
+    background: url('../IMAGES/gifgit.gif') center center no-repeat;
+    background-size: cover;
+    display: none;
+    z-index: 1000; /* Make sure this is lower than the z-index of h1 */
+    animation: fadeIn 0.5s ease-in; /* Adjust the duration as needed */
 }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 
 
 .container {
-    width: 80%;
-    margin: 200px auto 240px auto; /* Adjust margin to push content below and move container a little bit on top */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     text-align: center;
-}
+  }
+
 .arrow-left {
     position: absolute;
     top: 20px;
@@ -34,47 +58,55 @@ body {
     border: none; /* Remove border */
 }
 
-
 .content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
     align-items: center;
-    justify-content: center; /* Align content to the start (left) */
-    margin-left: -100px; /* Adjust margin to move both image and text more to the left */
+    width: 80%;
+    margin: 0 auto;
 }
-
 
 .image {
-    margin-right: 10px; /* Adjust margin to push the image closer to the text */
+    display: flex;
+    justify-content: flex-end; /* Align the image to the right of its grid cell */
+    margin-right: 10px;
 }
+
+
 .image img {
-    width: 300px; /* Adjust image width to make it larger */
+    width: 500px; /* Adjust image width to make it larger */
     height: auto;
     border-radius: 10px;
 }
 
 
 .text {
-    margin-left: 10px; /* Adjust margin to move the text closer to the image */
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    font-size: 30px;
+    font-style: normal;
+    font-family: "MyCustomFont";
+    letter-spacing: 5px; 
+    line-height: 0.3; /* Adjust this value to change the space between lines */
+    margin-right: 900px;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-top: 20px; /* Adjust margin between image and text */
-    font-size: 24px; /* Increase the font size */
-    letter-spacing: 1px; /* Add space between letters */
 }
 
+.title, .subtitle {
+    /* Other styles... */
+    letter-spacing: 5px; /* Adjust this value to reduce the space between letters */
+    white-space: nowrap; /* Prevents the text from wrapping to the next line */
+    text-align: center;
+   
+}
 
-
-.title,
-.subtitle,
 .launch-btn {
     margin: 0; /* Remove default margins */
 }
-.title {
-    font-family: 'jejumyeongjo', sans-serif; /* Change font family to jejumyeongjo */
-}
-.subtitle {
-    margin-bottom: 40px; /* Add margin between subtitle and launch button */
-}
-
 
 .launch-btn {
     background-color: #4E374E; /* Set the background color */
@@ -84,3 +116,12 @@ body {
     font-size: 14px;
     cursor: pointer;
 }
+.slow-fade-out {
+    animation: slowFadeOut 2s 1s forwards; /* Adjust the duration and delay as needed */
+}
+
+@keyframes slowFadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
